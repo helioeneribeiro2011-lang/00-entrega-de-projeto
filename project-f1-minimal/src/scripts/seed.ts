@@ -11,7 +11,7 @@ function generateDataTs(seed: any) {
 }
 
 function main() {
-  const root = resolve(__dirname, '..');
+  const root = resolve(__dirname, '..', '..');
   const seedPath = resolve(root, 'seeds', 'seed.json');
   const outPath = resolve(root, 'src', 'data.ts');
 
