@@ -16,6 +16,19 @@ export async function buildServer() {
     return { status: "ok" };
   });
 
+  // Rota inicial (/)
+  server.get('/', async (request, reply) => {
+    return {
+      message: "Bem-vindo à API da Fórmula 1!",
+      status: "online",
+      endpoints_disponiveis: {
+        health: "/health",
+        teams: "/teams",
+        drivers: "/drivers"
+      }
+    };
+  });
+
   await registerTeamsRoutes(server);
   await registerDriversRoutes(server);
 
